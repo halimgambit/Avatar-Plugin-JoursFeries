@@ -1,0 +1,22 @@
+{
+	"modules": { 
+		"JoursFeries": {
+			"version": "1.0",
+			"name": "jourferie",
+			"CleApi": "",
+			"rules": {
+				"feries": ["holiday"],
+				"command2": ["may 1","may 1st","christma"],
+				"feries": ["holiday"],
+				"command2": ["may 1","may 1st","christma"],
+				"feries": ["holiday"],
+				"command2": ["may 1","may 1st","christma"],
+				"feries": ["holiday"],
+				"command2": ["may 1","may 1st","christma"],
+				"feries": ["holiday"],
+				"noel": ["christma"]
+			}
+		}
+	}
+}
+			
