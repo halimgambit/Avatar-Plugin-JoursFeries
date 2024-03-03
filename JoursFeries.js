@@ -27,6 +27,7 @@ if (!CleApi) {
   Avatar.speak(`Pas de clé API sur le fichier propriété`, data.client, () => {
     Avatar.Speech.end(data.client);
   });
+return;
 }
 
 fetch(`https://anyapi.io/api/v1/holidays?country=FR&language=fr&apiKey=${CleApi}`)
@@ -41,7 +42,6 @@ fetch(`https://anyapi.io/api/v1/holidays?country=FR&language=fr&apiKey=${CleApi}
 
     const mois = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"];
 
-    // Assuming you want to create a concatenated string for the first 6 holidays
     const holidayInfo = resData.slice(0, 13).map((holiday, index) => {
       const dateOrigine = new Date(holiday.date);
       const jour = dateOrigine.getDate();
@@ -50,14 +50,13 @@ fetch(`https://anyapi.io/api/v1/holidays?country=FR&language=fr&apiKey=${CleApi}
       const dateFormater = `${jour} ${mois[moisIndex]} ${annee}`;
       const message = `${dateFormater}: ${holiday.name}.`;
 
-      // Delay each spoken message by 2 seconds (adjust as needed)
       setTimeout(() => {
         Avatar.speak(message, data.client, () => {
-          if (index === 13) { // Check if it's the last message
+          if (index === 13) {
             Avatar.Speech.end(data.client);
           }
         });
-      }, index * 5000); // Delay increases with each iteration
+      }, index * 5000);
     });
   })
   .catch(error => {
